@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>郑州大学开源镜像站-郑州大学网络管理中心</title>
+    <meta name="keywords" content="开源镜像站,郑州大学开源镜像站,郑州大学网络管理中心" />
+    <meta name="description" content="开源镜像站,郑州大学开源镜像站,郑州大学网络管理中心" />
+    <meta name="author" content="启帆"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/pintuer.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/pintuer.js"></script>
+    
+    <style>
+        .top {
+            min-height:250px;
+            padding:60px 15px;
+        }
+        .title {
+            font-size:40px;
+            line-height:45px;
+            color:#fff;
+            width:500px;
+        }
+        .title2 {
+            color:#fff;
+            margin-top:50px;
+        }
+        .carousel-caption {
+            position: absolute;
+            right: 15%;
+            bottom: 100px;
+            left: 15%;
+            z-index: 10;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 1px 2px rgba(0,0,0,.6);
+            background-color: rgba(0,0,0,.1);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+            border-radius: 10px;
+            -moz-border-radius: 10px; /* Firefox */
+            -webkit-border-radius: 10px;
+        }
+        /*.slider {
+            height:300px;
+        }*/
+        .slider img {
+            width:100%;
+            height:100%;
+        }
+        table a {
+            color:#0a8;
+        }
+        .footer {
+            height:300px;
+        }
+    </style>
+    <script src="js/respond.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "/status/task_status.json",
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+                    init(data);
+                },
+                error: function () { }
+            });
+           // init(json);
+            
+        });
+      
+        function init(data) {
+            var json =data; // eval("(" + data + ")");
+           
+            var html = "";
+            var apache=json.apache;
+            var archlinux=json.archlinux;
+            var centos=json.centos;
+            var cygwin=json.cygwin;
+            var debian=json.debian;
+            var debian_cd=json["debian-cd"];
+            var epel=json.epel;
+            var fedora=json.fedora;
+            var freebsd=json.freebsd;
+            var gnu=json.gnu;
+            var opensuse=json.opensuse;
+            var qt=json.qt;
+            var ubuntu=json.ubuntu;
+            var ununtu_release=json["ubuntu-releases"];
+
+			var pypi=json.pypi;
+			var raspbian=json.raspbian;
+			var kali=json.kali;
+			
+          //  html += AddHtml(apache, "apache");
+          //  console.info("-->" + AddHtml(apache, "apache"));
+            html += AddHtml(archlinux, "archlinux");
+            html += AddHtml(centos, "centos");
+           // html += AddHtml(cygwin, "cygwin");
+            html += AddHtml(debian_cd, "debian-cd");
+           // html += AddHtml(epel, "epel");
+           // html += AddHtml(fedora, "fedora");
+            html += AddHtml(freebsd, "freebsd");
+         //   html += AddHtml(gnu, "gnu");
+            html += AddHtml(opensuse, "opensuse");
+            html += AddHtml(qt, "qt");
+            html += AddHtml(ubuntu, "ubuntu");
+           // html += AddHtml(ununtu_release, "ubuntu-releases");
+            html+=AddHtml(pypi, "pypi");
+		    html+=AddHtml(raspbian, "raspbian");
+			html+=AddHtml(kali, "kali");
+			
+            $(".mirror_list").append(html);
+        }
+        function AddHtml(obj, name) {
+        //    console.info("-->"+obj);
+            var showName = "",shuoming="";
+                switch (name) {
+                    case ("apache"):
+                        showName = "Apache";
+                        shuoming = "世界使用排名第一的Web服务器软件";
+                        break;
+                    case ("archlinux"):
+                        showName = "Arch Linux";
+                        shuoming = "以轻量简洁为设计理念的Linux发行版 <a class='text-red float-right' href='wiki/arch.html'>Help</a>";
+                        break;
+                    case ("centos"):
+                        showName = "CentOS";
+                        shuoming = "社区企业操作系统 <a class='text-red float-right' href='wiki/centos.html'>Help</a>";
+                        break;
+                    case ("cygwin"):
+                        showName = "Cygwin";
+                        shuoming = "windows平台上运行的类UNIX模拟环境";
+                        break;
+                    case ("debian"):
+                        showName = "Debian";
+                        shuoming = "Debian以稳定性闻名";
+                        break;
+                    case ("debian-cd"):
+                        showName = "Debian-CD";
+                        shuoming = "Debian系统镜像";
+                        break;
+                    case ("deepin"):
+                        showName = "Deepin";
+                        shuoming = "武汉深之度科技有限公司开发的Linux发行版";
+                        break;
+                    case ("deepin-cd"):
+                        showName = "Deepin-CD";
+                        shuoming = "Deepin系统镜像";
+                        break;
+                    case ("epel"):
+                        showName = "EPEL";
+                        shuoming = "yum软件源";
+                        break;
+                    case ("fedora"):
+                        showName = "Fedora";
+                        shuoming = "知名的Linux发行版,基于Red Hat Linux";
+                        break;
+                    case ("freebsd"):
+                        showName = "FreeBSD";
+                        shuoming = "类UNIX操作系统";
+                        break;
+                    case ("gnu"):
+                        showName = "GNU";
+                        shuoming = "GNU's Not Unix";
+                        break;
+                    case ("opensuse"):
+                        showName = "openSUSE";
+                        shuoming = "强大稳定的Linux开源操作系统";
+                        break;
+                    case ("qt"):
+                        showName = "QT";
+                        shuoming = "跨平台C++图形用户界面应用程序开发框架";
+                        break;
+                    case ("ubuntu"):
+                        showName = "Ubuntu";
+                        shuoming = "以桌面应用为主的Linux操作系统";
+                        break;
+                    case ("ubuntu-releases"):
+                        showName = "Ubuntu-Releases";
+                        shuoming = "Ubuntu发布版";
+                        break;
+					case ("pypi"):
+                        showName = "pypi";
+                        shuoming = "The Python Package Index ";
+                        break;
+					case ("raspbian"):
+                        showName = "raspbian";
+                        shuoming = "树莓派操作系统";
+                        break;
+					case ("kali"):
+                        showName = "kali-images";
+                        shuoming = "Kali Linux预装了许多渗透测试软件";
+                        break;	
+                }
+                var color = "", msg = "";
+                if (obj.status == 1) {
+                    color = "bg-mix";//同步中
+                    msg = "Sync running";
+                } else if (obj.status == 2 && obj.exitcode !=0)  {//失败
+                    color = "bg-yellow-light";
+                    msg = "Sync failed";
+                } else if (obj.status == 2 && obj.exitcode ==0) {
+                    color = "bg-main";//成功
+                    msg = "Sync succeed";
+                } else if (obj.status == 0) {
+                    color = "bg-green-light";//initial
+                    msg = "Sync initial";
+                }
+                var h = "<tr class=\"fadein-left\"><td><a href=\"/" + name + "\">" + showName + "</a></td><td><span class=\"tag " + color + "\">" + msg + "</span></td><td>" + shuoming + "</td></tr>";
+                return h;
+                   ;
+        }
+    </script>
+</head>
+<body>
+    <div class="layout">
+        <div class="line">
+            <div class="x12 bg-main">
+
+                <div class="top container">
+                    <p class="title bouncein swing-hover">郑州大学开源镜像站</p><img src="images/logo.gif" style="width:0;height:0;"/>
+                    <h2 class="title2 fadein-bottom">欢迎进入郑州大学开源镜像站，<a href="http://123.15.57.34" class="text-yellow">校外访问地址</a> <a href="http://10.66.0.111" class="text-yellow">校内访问地址</a> <a href="qa/?qa=公-告" class="text-red" tagert="_blank">公告与问答系统</a></h2>
+                </div>
+            </div>
+          
+        </div>
+        <div class="container">
+            <div class="banner slider" data-style="border-main">
+                <div class="carousel">
+                    <div class="item">
+                        <div class="keypoint bg">
+                            <h1>本站镜像</h1>
+                            <p>Apache、Arch Linux、CentOS、Debian、Deepin、Fedora、FreeBSD、openSUSE、Ubuntu等</p>
+                            <p><a href="qa" class="button bg-main">Question&Answer</a></p>
+                        </div>
+                    
+                    </div>
+                    <div class="item">
+                        <div class="keypoint bg">
+                            <h1>Android SDK</h1>
+                            <p>Android SDK——Android专属的软件开发工具包。</p>
+                            <p><a href="/android" class="button bg-main">详细介绍</a></p>
+                        </div>
+                      
+                    </div>
+                    <div class="item">
+                        <div class="keypoint bg">
+                            <h1>CentOS</h1>
+                            <p>CentOS（Community Enterprise Operating System，社区企业操作系统）是Linux发行版之一</p>
+                            <p><a href="/centos" class="button bg-main">详细介绍</a></p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+
+            <table class="table table-hover  table-striped table-responsive text-main mirror_list">
+                <tr class="fadein-left"><th>镜像名称#</th><th>同步状态#</th><th>说明#</th></tr>
+               <tr class="fadein-left"><td><a href="/android">Android SDK</a></td><td><span class="tag bg-main">Sync succeed</span></td><td>安卓开发工具</td></tr>
+                
+            </table>
+            <br />
+            <br />
+           <!-- <div class="alert alert-red"><span class="close rotate-hover"></span><strong>友情提示：</strong>服务器重建，暂时提供Android SDK下载......</div>-->
+        </div>
+       
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="container-layout bg-gray bg-inverse padding-big-top padding-big-bottom">
+        
+        <div class="table-responsive padding hidden-l container">
+            <ul class="nav nav-sitemap">
+                <li>
+                    <a href="javascript:void(0);">友情链接</a>
+                    <ul>
+                        <li><a target="_blank" href="http://www.zzu.edu.cn">郑州大学官网</a></li>
+                        <li><a target="_blank" href="http://soft2.zzu.edu.cn">软件大全</a></li>
+                        <li><a target="_blank" href="http://www5.zzu.edu.cn/net/">郑大网络管理中心</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">友情链接</a>
+                    <ul>
+                        <li><a target="_blank" href="http://pt.zzu.edu.cn">泊月PT</a></li>
+                        <li><a target="_blank" href="http://dls.zzu.edu.cn">郑大远程教育学院</a></li>
+                        <li><a target="_blank" href="qa">问答系统</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">意见反馈：</a></li>
+                <li><a href="#">ssx#zzu.edu.cn</a></li>
+            </ul>
+        </div>
+      
+        <div class="text-center">版权所有 © mirrors.zzu.edu.cn All Rights Reserved</div>
+
+    </div>
+    
+</body>
+</html>

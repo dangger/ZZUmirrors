@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>CentOS镜像使用帮助-郑州大学开源镜像站</title>
+    <meta name="keywords" content="CentOS镜像使用帮助-郑州大学开源镜像站" />
+    <meta name="description" content="CentOS镜像使用帮助-郑州大学开源镜像站" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/pintuer.css" rel="stylesheet" />
+    <script src="../js/jquery.js"></script>
+    <script src="../js/pintuer.js"></script>
+    <script src="../js/respond.js"></script>
+    <style>
+        .header {
+            height: 100px;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header bg-main">
+        CentOS镜像使用帮助
+    </div>
+    <div class="container padding-big">
+        <div>
+            <h2 class="text-main">收录架构</h2>
+            <ul class="margin">
+                <li>.i386</li>
+                <li>x86_64</li>
+                <li>SRPMS</li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="text-main">收录版本</h2>
+            <ul class="margin">
+                <li>所有版本</li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="text-main">更新时间</h2>
+            <ul class="margin">
+                <li>每24小时更新一次</li>
+            </ul>
+        </div>
+        <hr class="bg-main" />
+        <div>
+            <h2 class="text-main">使用说明</h2>
+            <div class="margin">
+                <p>首先备份/etc/yum.repos.d/CentOS-Base.repo</p>
+                <div class="panel border-mix bg-back margin-bottom">
+                    <div class="panel-body">
+                        mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+                    </div>
+                </div>
+                <p>下载对应版本repo文件, 放入/etc/yum.repos.d/,并改名为CentOS-Base.repo(操作前请做好相应备份)</p>
+                <ul class="margin">
+                    <li><a class="text-main" href="/wiki/centos/download/CentOS7-Base-zzu.repo" target="_blank">CentOS7</a></li>
+                    <li><a class="text-main" href="/wiki/centos/download/CentOS6-Base-zzu.repo" target="_blank">CentOS6</a></li>
+                    <li><a class="text-main" href="/wiki/centos/download/CentOS5-Base-zzu.repo" target="_blank">CentOS5</a></li>
+                </ul>
+                <p>运行以下命令生成缓存</p>
+                <div class="panel border-mix bg-back margin-bottom">
+                    <div class="panel-body">
+                        <p>yum clean all</p>
+                        <p>yum makecache</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-main" />
+        <div>
+            <h2 class="text-main">相关链接</h2>
+            <ul class="margin">
+                <li>官方主页: <a class="text-main" href="http://www.centos.org/" target="_blank">http://www.centos.org/</a></li>
+                <li>邮件列表: <a class="text-main" href="http://www.centos.org/modules/tinycontent/index.php?id=16" target="_blank">http://www.centos.org/modules/tinycontent/index.php?id=16</a></li>
+                <li>论坛: <a class="text-main" href="http://www.centos.org/modules/newbb/" target="_blank">http://www.centos.org/modules/newbb/</a></li>
+                <li>文档: <a class="text-main" href="http://www.centos.org/docs/" target="_blank">http://www.centos.org/docs/</a></li>
+                <li>Wiki: <a class="text-main" href="http://wiki.centos.org/" target="_blank">http://wiki.centos.org/</a></li>
+                <li>镜像列表: <a class="text-main" href="http://www.centos.org/modules/tinycontent/index.php?id=32" target="_blank">http://www.centos.org/modules/tinycontent/index.php?id=32</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-layout margin-big-top">
+        <div class="border-top padding-top">
+            <div class="text-center">
+                <ul class="nav nav-inline">
+                    <li class="active"><a href="/">网站首页</a> </li>
+                    <li><a href="#">Centos</a> </li>
+                    <li><a href="#">AndroidSDK</a> </li>
+                    <li><a href="#">ArchLinux</a> </li>
+                    <li><a href="#">Debian</a> </li>
+                    <li><a href="#">FreeBSD</a> </li>
+                    <li><a href="#">openSUSE</a> </li>
+                    <li><a href="#">QT</a> </li>
+                    <li><a href="#">Ubuntu</a> </li>
+                    <li><a href="#">pypi</a> </li>
+                    <li><a href="#">raspbian</a> </li>
+                    <li><a href="#">Kali</a> </li>
+                </ul>
+            </div>
+            <div class="text-center height-big">
+                版权所有 © mirrors.zzu.edu.cn All Rights Reserved
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

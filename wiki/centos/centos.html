@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>CentOS镜像使用帮助</title>
+	 <link rel="stylesheet" type="text/css" href="/wiki/css/wiki-mirrors.css" media="screen" />
+</head>
+<body>
+
+<h1>CentOS镜像使用帮助</h1>
+
+<div id="mirror-data">
+    <h3>收录架构</h3>
+    <ul>
+        <li>i386</li>
+        <li>x86_64</li>
+        <li>SRPMS</li>
+    </ul>
+    <h3>收录版本</h3>
+    <p>
+        所有版本
+    </p>
+    <h3>更新时间</h3>
+    <p>每24小时更新一次</p>
+</div>
+<div class="hr"><hr /></div>
+
+<div id="mirror-usage">
+    <h3>使用说明</h3>
+    <p>首先备份/etc/yum.repos.d/CentOS-Base.repo</p>
+    <pre>
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</pre>
+    <p>下载对应版本repo文件, 放入/etc/yum.repos.d/,并改名为CentOS-Base.repo(操作前请做好相应备份)</p>
+    <ul>
+        <li><a href="download/CentOS7-Base-zzu.repo" download="CentOS7-Base-zzu.repo">CentOS7</a></li>
+        <li><a href="download/CentOS6-Base-zzu.repo" download="CentOS6-Base-zzu.repo">CentOS6</a></li>
+        <li><a href="download/CentOS5-Base-zzu.repo" download="CentOS5-Base-zzu.repo">CentOS5</a></li>
+    </ul>
+    <p>运行以下命令生成缓存</p>
+    <pre>
+yum clean all
+yum makecache</pre>
+</div>
+<div class="hr"><hr /></div>
+
+
+<div id="mirror-links">
+    <h3>相关链接</h3>
+    <ul>
+        <li>官方主页: <a href="http://www.centos.org/" target="_blank">http://www.centos.org/</a></li>
+        <li>邮件列表: <a href="http://www.centos.org/modules/tinycontent/index.php?id=16" target="_blank">http://www.centos.org/modules/tinycontent/index.php?id=16</a></li>
+        <li>论坛: <a href="http://www.centos.org/modules/newbb/" target="_blank">http://www.centos.org/modules/newbb/</a></li>
+        <li>文档: <a href="http://www.centos.org/docs/" target="_blank">http://www.centos.org/docs/</a></li>
+        <li>Wiki: <a href="http://wiki.centos.org/" target="_blank">http://wiki.centos.org/</a></li>
+        <li>镜像列表: <a href="http://www.centos.org/modules/tinycontent/index.php?id=32" target="_blank">http://www.centos.org/modules/tinycontent/index.php?id=32</a></li>
+    </ul>
+</div>
+
+<div id="footer">
+    <p id="copyright">郑州大学开源镜像站</p>
+</div>
+
+</body></html>
