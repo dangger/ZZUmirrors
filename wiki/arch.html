@@ -1,0 +1,50 @@
+
+    <!--#include file="header.html" -->
+    <div>
+        <div class="container padding-big-top">
+            <div class="line">
+                <div class="x2 padding-small-right">
+                    <button class="button icon-navicon" data-target="#nav-pills1"></button>
+                    <ul class="nav nav-pills nav-navicon" id="nav-pills1">
+                        <li class="nav-head text-main">Wiki</li>
+                        <li><a href="/wiki">首页</a> </li>
+                        <li><a href="/wiki/android.html">Android SDK</a> </li>
+                        <li class="active"><a href="/wiki/arch.html">Arch Linux</a> </li>
+                        <li><a href="/wiki/centos.html">CentOS</a> </li>
+                        <li><a href="/wiki/freebsd.html">FreeBSD</a> </li>
+                        <li><a href="/wiki/opensuse.html">openSUSE</a> </li>
+                        <li><a href="/wiki/qt.html">QT</a> </li>
+                        <li><a href="/wiki/ubuntu.html">Ubuntu</a> </li>
+                        <li><a href="/wiki/pypi.html">pypi</a> </li>
+                        <li><a href="/wiki/raspbian.html">raspbian</a> </li>
+                    </ul>
+                </div>
+                <div class="x10 border-left">
+                    <div class="padding-big">
+
+                        <h2>Arch Linux 镜像使用帮助</h2>
+
+                        <h3 class="margin-big-top border-left border-big padding-left border-main text-main">收录架构</h3>
+                        <ul class="height-big margin-top margin-left">
+                            <li>i686 </li>
+                            <li>x86_64 </li>
+                        </ul>
+                        <h3 class="margin-big-top border-left border-big padding-left border-main text-main">收录版本</h3>
+                        <ul class="height-big margin-top margin-left">
+                            <li>ALL </li>
+                        </ul>
+                        <h3 class="margin-big-top border-left border-big padding-left border-main text-main">使用说明</h3>
+                        <h4 class="margin-top margin-left">
+                            编辑/etc/pacman.d/mirrorlist，先注释掉里面的所有行，然后在文件的最顶端添加 
+                        </h4>
+                        <div class="panel border-mix bg-back margin-bottom margin-top margin-left">
+                            <div class="panel-body">
+                                Server = http://mirrors.zzu.edu.cn/archlinux/$repo/os/$arch
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#include file="footer.html" -->
